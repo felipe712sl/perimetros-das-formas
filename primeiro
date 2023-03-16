@@ -1,0 +1,82 @@
+#include <iostream>
+using namespace std;
+
+int main (int argc, char** argv) 
+{
+	/*Declaração de variáveis*/
+	int forma=0;/*VARIAVEL AUXILIAR DE IDENTIFICACAO DE FORMA*/
+	float ldq=0;/*LADO QUADRADO*/
+	float ldmar=0;/*LADO MAIOR RETANGULO*/
+	float ldmer=0;/*LADO MENOR RETANGULO*/
+	float base=0;/*BASE TRIANGULO*/
+	float altura=0;/*ALTURA TRIANGULO*/
+	float raio=0;/*RAIO CIRCULO*/
+	int again=1;/*CONFIRMACAO DE REPETICAO*/
+	
+	/*Título*/
+	cout<<"Este programa tem a finalidade de mostrar o perimetro de formas gometricas conhecidas\n\n";
+		while (again == 1)
+		{
+			/*Interação Usuário*/
+			cout<<"Qual forma gostaria de saber o perimetro?\nDigite o numero correspondente e aperte ENTER \n\n";
+			cout<<" 1 para Quadrado \n 2 para Retangulo \n 3 para Triangulo \n 4 para Circulo \n\n";
+			/*Entrada Usuário e verificação de forma*/
+			cin>>forma;
+				/*Inicio Validação escholha de forma*/
+				while (forma<1 || forma>4)
+				{
+					cout<<"Por favor digite um numero valido \n";
+					cout<<" 1 para Quadrado \n 2 para Retangulo \n 3 para Triangulo \n 4 para Circulo \n\n";
+					cin>>forma;
+				}
+				/*Fim Validação escholha de forma*/
+			/*Para forma QUADRADO*/
+				if (forma == 1) 
+				{
+					cout<<"Voce escolheu QUADRADO. Digite o valor de um lado: ";
+					cin>>ldq;
+					cout<<"O perimetro deste quadrado e "<<ldq*4<<endl<<endl;
+				}
+			/*Para forma RETANGULO*/
+				if (forma == 2) 
+				{
+					cout<<"Voce escolheu RETANGULO. Digite o valor do lado maior: ";
+					cin>>ldmar;
+					cout<<"Agora digite o valor do lado menor: ";
+					cin>>ldmer;
+					cout<<"O perimetro deste retangulo e "<<(ldmar*2)+(ldmer*2)<<endl<<endl;
+				}
+			/*Para forma TRIANGULO*/
+				if (forma == 3)
+				{
+					cout<<"Voce escolheu TRIANGULO. Digite o valor da base: ";
+					cin>>base;
+					cout<<"Agora digite o valor da altura: ";
+					cin>>altura;
+					cout<<"O perimetro deste triangulo e "<<(base*altura)/2<<endl<<endl;
+				}
+			/*Para forma CIRCULO*/
+				if (forma == 4) 
+				{
+					cout<<"Voce escolheu CIRCULO. Digite o valor do raio: ";
+					cin>>raio;
+					cout<<"O perimetro deste circulo e "<<(2*3.14159265358979323846*raio)<<"\nO perimetro do circulo tambem e chamado de CIRCUNFERENCIA."<<endl<<endl;
+				}
+			/*CONFIRMACAO DE REPETICAO*/
+			cout<<"Gostaria de calcular novamente?\nDigite 1 para SIM e 0 para NAO e aperte ENTER \n\n";
+			cin>>again;
+				/*Inicio Validação repeticao*/
+				while (again>1 || again<0)
+				{
+					cout<<"Por favor digite um numero valido \n";
+					cout<<" 1 para SIM e 0 para NAO \n\n";
+					cin>>again;
+				}
+				/*Fim Validação repeticao*/
+		}
+	if (again == 0)
+	{
+		cout<<"Obrigado por utilizar este programa!";
+	}
+return 0;
+}
